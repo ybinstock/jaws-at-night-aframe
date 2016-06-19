@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Jaws at night • A-Frame</title>
+  <meta name="description" content="Jaws at night">
+  <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
+  <script src="bundle.js"></script>
+  <script src="https://rawgit.com/ngokevin/aframe-layout-component/master/dist/aframe-layout-component.min.js"></script>
+
+
+</head>
+<body>
+<a-scene>
+  <a-sky src="sky-night.jpg" sound="src: jaws.wav; autoplay: true"></a-sky>
+  <!--<a-sky src="night-sky.jpg"></a-sky>-->
+
+
+  <a-ocean width="50" depth="50" density="20" opacity="1" position="0 0 0"
+           ocean="width:50;depth:50;density:30;opacity:1" rotation="-90 0 0"></a-ocean>
+
+  <a-assets>
+    <img id="enemy-sprite" crossorigin="" src="shark-fin.png/" >
+  </a-assets>
+
+  <a-entity layout="type: circle; radius: 5" position="0 0.5 0">
+    <a-animation attribute="rotation" dur="30000" easing="linear" repeat="indefinite" to="0 -120 0"></a-animation>
+    <!-- Attach collision handler animations. -->
+    <a-animation attribute="opacity" begin="collider-hit" dur="400" ease="linear"
+                 from="1" to="0"></a-animation>
+    <a-animation attribute="scale" begin="collider-hit" dur="400" ease="linear"
+                 to="0 0 0"></a-animation>
+
+    <a-image look-at="#player" src="#enemy-sprite" transparent="true"></a-image>
+    <a-image look-at="#player" src="#enemy-sprite" transparent="true"></a-image>
+    <a-image look-at="#player" src="#enemy-sprite" transparent="true"></a-image>
+    <a-image look-at="#player" src="#enemy-sprite" transparent="true"></a-image>
+    <a-image look-at="#player" src="#enemy-sprite" transparent="true"></a-image>
+    <a-image look-at="#player" src="#enemy-sprite" transparent="true"></a-image>
+    <a-image look-at="#player" src="#enemy-sprite" transparent="true"></a-image>
+  </a-entity>
+
+  <a-entity template="src: #enemies" data-num="8"></a-entity>
+
+  <!-- Laser. -->
+  <a-mixin id="laser"
+           geometry="primitive: cylinder; radius: 0.05; translate: 0 -2 0"
+           material="color: green; metalness: 0.2; opacity: 0.4; roughness: 0.3"  projectile="speed: -0.5" collider="target: .enemy"
+           rotation="90 0 0" projectile></a-mixin>
+
+  <a-camera id="player" position="0 1.8 0" pawner="mixin: laser; on: click" click-listener></a-camera>
+
+
+</a-scene>
+
+<script>
+
+</script>
+
+</body>
+</html>
