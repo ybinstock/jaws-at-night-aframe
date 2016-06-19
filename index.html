@@ -7,11 +7,13 @@
   <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
   <script src="bundle.js"></script>
   <script src="https://rawgit.com/ngokevin/aframe-layout-component/master/dist/aframe-layout-component.min.js"></script>
-
-
 </head>
 <body>
 <a-scene>
+  <a-assets>
+    <img id="enemy-sprite" crossorigin="" src="shark-fin.png" >
+  </a-assets>
+
   <a-sky src="sky-night.jpg" sound="src: jaws.wav; autoplay: true"></a-sky>
   <!--<a-sky src="night-sky.jpg"></a-sky>-->
 
@@ -19,9 +21,7 @@
   <a-ocean width="50" depth="50" density="20" opacity="1" position="0 0 0"
            ocean="width:50;depth:50;density:30;opacity:1" rotation="-90 0 0"></a-ocean>
 
-  <a-assets>
-    <img id="enemy-sprite" crossorigin="" src="shark-fin.png/" >
-  </a-assets>
+
 
   <a-entity layout="type: circle; radius: 5" position="0 0.5 0">
     <a-animation attribute="rotation" dur="30000" easing="linear" repeat="indefinite" to="0 -120 0"></a-animation>
