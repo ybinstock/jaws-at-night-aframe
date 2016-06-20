@@ -20,7 +20,7 @@
            ocean="width:50;depth:50;density:30;opacity:1" rotation="-90 0 0"></a-ocean>
 
   <a-assets>
-    <img id="enemy-sprite" crossorigin="" src="shark-fin.png/" >
+    <img id="enemy-sprite" crossorigin="" src="sharkfin.png/">
   </a-assets>
 
   <a-entity layout="type: circle; radius: 5" position="0 0.5 0">
@@ -40,12 +40,13 @@
     <a-image look-at="#player" src="#enemy-sprite" transparent="true"></a-image>
   </a-entity>
 
-  <a-entity template="src: #enemies" data-num="8"></a-entity>
+  <a-entity template="src: #enemies" data-num="7"></a-entity>
 
   <!-- Laser. -->
   <a-mixin id="laser"
            geometry="primitive: cylinder; radius: 0.05; translate: 0 -2 0"
-           material="color: green; metalness: 0.2; opacity: 0.4; roughness: 0.3"  projectile="speed: -0.5" collider="target: .enemy"
+           material="color: green; metalness: 0.2; opacity: 0.4; roughness: 0.3" projectile="speed: -0.5"
+           collider="target: .enemy"
            rotation="90 0 0" projectile></a-mixin>
 
   <a-camera id="player" position="0 1.8 0" pawner="mixin: laser; on: click" click-listener></a-camera>
