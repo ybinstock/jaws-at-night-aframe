@@ -17,11 +17,32 @@
     <img id="enemy-sprite" src="sharkfin.png">
   </a-assets>
 
+  <a-entity geometry="primitive: cylinder" scale="0.2 2 .2"
+            material="src: treebark.jpg; color: #696969; roughness: 1; metalness: 0" rotation="-90 0 0"
+            position="0 0 -1">
+  </a-entity>
+  <a-entity geometry="primitive: cylinder" scale="0.2 2 .2"
+            material="src: treebark.jpg; color: #696969; roughness: 1; metalness: 0" rotation="-90 0 0"
+            position=".5 0 -1">
+  </a-entity>
+  <a-entity geometry="primitive: cylinder" scale="0.2 2 .2"
+            material="src: treebark.jpg; color: #696969; roughness: 1; metalness: 0" rotation="-90 0 0"
+            position="1 0 -1">
+  </a-entity>
+  <a-entity geometry="primitive: cylinder" scale="0.2 2 .2"
+            material="src: treebark.jpg; color: #696969; roughness: 1; metalness: 0" rotation="-90 0 0"
+            position="1.5 0 -1">
+  </a-entity>
+  <a-entity geometry="primitive: cylinder" scale="0.2 2 .2"
+            material="src: treebark.jpg; color: #696969; roughness: 1; metalness: 0" rotation="-90 0 0"
+            position="-.5 0 -1">
+  </a-entity>
+
   <a-sky src="sky-night.jpg" sound="src: jaws.wav; autoplay: true"></a-sky>
 
 
-  <a-ocean width="50" depth="50" density="20" opacity="1" position="0 0 0"
-           ocean="width:50;depth:50;density:30;opacity:1" rotation="-90 0 0"></a-ocean>
+  <a-ocean width="100" depth="100" density="20" opacity="1" position="0 0 0"
+           ocean="width:100;depth:100;density:30;opacity:1" rotation="-90 0 0"  material="color: blue"></a-ocean>
 
   <a-entity layout="type: circle; radius: 5" position="0 0.5 0">
     <a-animation attribute="rotation" dur="30000" easing="linear" repeat="indefinite" to="0 -120 0"></a-animation>
@@ -49,7 +70,7 @@
            collider="target: .enemy"
            rotation="90 0 0" projectile></a-mixin>
 
-  <a-camera id="player" position="0 1.8 0" pawner="mixin: laser; on: click" click-listener></a-camera>
+  <a-camera id="player" position="0 1.8 0" pawner="mixin: laser; on: click" wasd-controls-enabled="false" click-listener></a-camera>
 
 
 </a-scene>
